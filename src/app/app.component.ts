@@ -7,8 +7,8 @@ import { ApiService } from './api.service';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
-  title?: string;
-  livros?: any[];
+  title: string = '';
+  livros: any[] = [];
 
   constructor(private apiService: ApiService) {}
 

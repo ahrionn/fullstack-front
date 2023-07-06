@@ -1,27 +1,38 @@
-<header>
-  <button class="header-button" (click)="getLivros()">Buscar Livros</button>
-  <button class="header-button">Inserir Livro</button>
-  <button class="header-button">Retirar Livro</button>
-  <button class="header-button">Modificar Livro</button>
-</header>
+<head>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+</head>
 
 <body>
+  <header>
+
+    <h1>
+      Welcome to my fucking library.
+      <br>
+      Please feel comfortable to do whatever the fuck you want.
+    </h1>
+
+    <button class="header-button" (click)="getLivros()"><i class="fas fa-list"></i></button>
+    <button class="header-button"><i class="fas fa-plus"></i></button>
+    <button class="header-button"><i class="fas fa-trash"></i></button>
+    <button class="header-button"><i class="fas fa-edit"></i></button>
+  </header>
+  
   <table class="livros-table" *ngIf="livros && livros.length > 0">
     <thead>
       <tr>
-        <th class="header-black" colspan="3">Informações</th>
+        <th class="header-black" colspan="3">here are some fucking books that i fucking have</th>
       </tr>
-      <tr>
-        <th class="col-nome">Nome</th>
-        <th class="col-autor">Autor</th>
-        <th class="col-ano">Ano</th>
+      <tr class="table-titles">
+        <th class="col-nome">fucking Title</th>
+        <th class="col-autor">fucking Author</th>
+        <th class="col-ano">fucking Release Year</th>
       </tr>
     </thead>
     <tbody>
       <tr *ngFor="let livro of livros">
-        <td class="text-center">{{ livro.nome }}</td>
-        <td class="text-center">{{ livro.autor }}</td>
-        <td class="text-center">{{ livro.ano }}</td>
+        <td class="text-center">- {{ livro.nome }} -</td>
+        <td class="text-center">- {{ livro.autor }} -</td>
+        <td class="text-center">- {{ livro.ano }} -</td>
       </tr>
     </tbody>
   </table>

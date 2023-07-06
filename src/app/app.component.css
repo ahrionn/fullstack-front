@@ -5,7 +5,6 @@ margin-bottom: 10px;
 
 button {
 padding: 10px 20px;
-background-color: #007bff;
 color: #fff;
 border: none;
 border-radius: 4px;
@@ -107,15 +106,23 @@ font-weight:bold;
 }
 
 .livros-table .col-nome {
-width: 30%;
+width: 20%;
 }
 
 .livros-table .col-autor {
-width: 30%;
+width: 20%;
 }
 
 .livros-table .col-ano {
-width: 30%;
+width: 20%;
+}
+
+.livros-table .col-teste {
+width: 20%;
+}
+
+.livros-table .col-teste {
+width: 20%;
 }
 
 .livros-table tbody tr:nth-child(even) {
@@ -124,8 +131,9 @@ color: white;
 }
 
 .livros-table tbody tr:hover {
-background-color: #51117c;
-color: white
+background-color: #FF00FF;
+color: white;
+transition: background-color 0.3s;
 }
 
 .app-title {

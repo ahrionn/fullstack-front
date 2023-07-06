@@ -1,11 +1,14 @@
-<h1>Front-end Angular CLI</h1>
-<button (click)="getLivros()">Obter Dados</button>
-<table *ngIf="livros && livros.length > 0">
+<h1 class="app-title">Biblioteca</h1>
+<button class="btn-get-livros" (click)="getLivros()">Buscar Livros</button>
+<table class="livros-table" *ngIf="livros && livros.length > 0">
   <thead>
     <tr>
-      <th>Nome</th>
-      <th>Autor</th>
-      <th>Ano</th>
+      <th colspan="3">Informações</th>
+    </tr>
+    <tr>
+      <th class="col-nome">Nome</th>
+      <th class="col-autor">Autor</th>
+      <th class="col-ano">Ano</th>
     </tr>
   </thead>
   <tbody>

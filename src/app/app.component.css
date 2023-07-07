@@ -106,6 +106,10 @@ font-size: 16px;
 font-weight:bold;
 }
 
+.livros-table .col-id {
+width: 20%;
+}
+
 .livros-table .col-nome {
 width: 20%;
 }
@@ -114,15 +118,11 @@ width: 20%;
 width: 20%;
 }
 
+.livros-table .col-editora {
+width: 20%;
+}
+
 .livros-table .col-ano {
-width: 20%;
-}
-
-.livros-table .col-teste {
-width: 20%;
-}
-
-.livros-table .col-teste {
 width: 20%;
 }
 
@@ -149,12 +149,81 @@ animation: slide-in 1s ease-in-out;
 animation: fade-in 1s ease-in-out;
 }
 
+.livro-form {
+display: flex;
+flex-direction: column;
+align-items: center;
+margin-top: 20px;
+width: 80%;
+margin: 50px auto;
+animation: fade-in 1s ease-in-out;
+}
+
+.form-entry {
+width: 15%;
+padding: 10px;
+margin-top: 5px;
+margin-bottom: 10px;
+font-size: 16px;
+border: none;
+border-radius: 4px;
+background-color: #f5f5f5;
+transition: background-color 0.3s;
+}
+
+.form-entry:focus {
+outline: none;
+background-color: #ebebeb;
+}
+
+.livro-form p {
+margin: 5px;
+font-size: 22px;
+}
+
+.form-message {
+color: #FF00FF;
+animation: fade-out 3s linear;
+}
+
+button[type="submit"] {
+margin-right: 50px;
+margin-left: 50px;
+padding: 20px 25px;
+background-color: black;
+color: #fff;
+border: none;
+border-radius: 50px;
+font-size: 25px;
+font-family: serif;
+cursor: pointer;
+transition: background-color 0.3s;
+font-size: 25px;
+}
+
+button[type="submit"]:hover {
+background-color: white;
+color: #000000;
+}
+
 @keyframes fade-in {
 from {
     opacity: 0;
 }
 to {
     opacity: 1;
+}
+}
+
+@keyframes fade-out {
+0% {
+    opacity: 1;
+}
+90% {
+    opacity: 1;
+}
+100% {
+    opacity: 0;
 }
 }
 

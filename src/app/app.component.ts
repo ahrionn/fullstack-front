@@ -10,6 +10,8 @@ import { Livro } from './livro.model';
 export class AppComponent implements OnInit {
   showTable = false;
   showFormulario = false;
+  formSuccess = false;
+  formError = false;
   novoLivro: Livro = {
     id: 0,
     nome: '',
@@ -18,24 +20,47 @@ export class AppComponent implements OnInit {
     ano: 0
   };
   title: string = '';
-  livros: any[] = [];
+  livros: Livro[] = [];
 
   constructor(private apiService: ApiService) {}
 
   ngOnInit() {}
 
   submitForm() {
-    // Lógica para enviar os dados do novo livro para a API
-    // Aqui você pode fazer a chamada HTTP para a sua API e enviar os dados do novo livro
-    // por exemplo, utilizando o serviço HttpClient do Angular.
-    // Você também pode reinicializar a variável novoLivro e definir showForm como false para ocultar o formulário após o envio dos dados.
+    this.apiService.postLivros(this.novoLivro).subscribe(
+      () => {
+        this.formSuccess = true;
+        setTimeout(() => {
+          this.formSuccess = false;
+        }, 3000);
+        this.formError = false;
+        this.livros.push(this.novoLivro);
+        console.log('Livro adicionado com sucesso!');
+        this.novoLivro = {
+          id: 0,
+          nome: '',
+          autor: '',
+          editora: '',
+          ano: 0
+        };
+      },
+      (error) => {
+        this.formSuccess = false;
+        this.formError = true;
+        setTimeout(() => {
+          this.formError = false;
+        }, 3000);
+        console.error('Erro ao adicionar o livro:', error);
+        // Faça o tratamento do erro
+      }
+    );
   }
 
   getLivros() {
     this.apiService.getLivros().subscribe(
       (response) => {
         this.livros = response;
-        this.showTable = true; // Atualiza a propriedade showTable para exibir a tabela
+        this.showTable = true;
       },
       (error) => {
         console.error(error);

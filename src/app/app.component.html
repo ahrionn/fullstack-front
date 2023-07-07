@@ -17,11 +17,23 @@
     <button class="header-button"><i class="fas fa-edit"></i></button>
   </header>
   
-  <form *ngIf="showFormulario" (ngSubmit)="submitForm()">
-    <input type="text" placeholder="Nome" [(ngModel)]="novoLivro.nome" required>
-    <input type="text" placeholder="Autor" [(ngModel)]="novoLivro.autor" required>
-    <input type="number" placeholder="Ano" [(ngModel)]="novoLivro.ano" required>
-    <button type="submit">Cadastrar</button>
+  <form class="livro-form" *ngIf="showFormulario">
+
+    <p>Oh, so you have something to contribute?</p>
+    <p>That's great.</p>
+    <p>Fucking great.</p>
+
+    <input class="form-entry" type="number" placeholder="ID" name="id" [(ngModel)]="novoLivro.id" required>
+    <input class="form-entry" type="text" placeholder="Name" name="nome" [(ngModel)]="novoLivro.nome" required>
+    <input class="form-entry" type="text" placeholder="Author" name="autor" [(ngModel)]="novoLivro.autor" required>
+    <input class="form-entry" type="text" placeholder="Publishing Company" name="editora" [(ngModel)]="novoLivro.editora" required>
+    <input class="form-entry" type="number" placeholder="Release Year" name="ano" [(ngModel)]="novoLivro.ano" required>
+    <button (click)="submitForm()" type="submit">add this shit</button>
+
+    <p class="form-message" *ngIf="formSuccess">yaaay it fucking worked</p>
+
+    <p class="form-message" *ngIf="formError">there's something wrong with your shit</p>
+
   </form>
 
   <table class="livros-table" *ngIf="showTable && livros && livros.length > 0">

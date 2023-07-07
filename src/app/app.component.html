@@ -11,13 +11,20 @@
       Please feel comfortable to do whatever the fuck you want.
     </h1>
 
-    <button class="header-button" (click)="getLivros()"><i class="fas fa-list"></i></button>
-    <button class="header-button"><i class="fas fa-plus"></i></button>
+    <button class="header-button" (click)="exibirTabela()" (click)="getLivros()"><i class="fas fa-list"></i></button>
+    <button class="header-button" (click)="exibirFormulario()"><i class="fas fa-plus"></i></button>
     <button class="header-button"><i class="fas fa-trash"></i></button>
     <button class="header-button"><i class="fas fa-edit"></i></button>
   </header>
   
-  <table class="livros-table" *ngIf="livros && livros.length > 0">
+  <form *ngIf="showFormulario" (ngSubmit)="submitForm()">
+    <input type="text" placeholder="Nome" [(ngModel)]="novoLivro.nome" required>
+    <input type="text" placeholder="Autor" [(ngModel)]="novoLivro.autor" required>
+    <input type="number" placeholder="Ano" [(ngModel)]="novoLivro.ano" required>
+    <button type="submit">Cadastrar</button>
+  </form>
+
+  <table class="livros-table" *ngIf="showTable && livros && livros.length > 0">
     <thead>
       <tr>
         <th class="header-black" colspan="5">Here are some fucking books that I fucking have:</th>

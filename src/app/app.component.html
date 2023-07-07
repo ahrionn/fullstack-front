@@ -30,20 +30,20 @@
         <th class="header-black" colspan="5">Here are some fucking books that I fucking have:</th>
       </tr>
       <tr class="table-titles">
-        <th class="col-teste1">teste</th>
+        <th class="col-id">fucking ID</th>
         <th class="col-nome">fucking Title</th>
         <th class="col-autor">fucking Author</th>
+        <th class="col-editora">fucking Publishing Company</th>
         <th class="col-ano">fucking Release Year</th>
-        <th class="col-teste2">teste</th>
       </tr>
     </thead>
     <tbody>
       <tr *ngFor="let livro of livros">
-        <td class="text-center">- teste -</td>
+        <td class="text-center">- {{ livro.id }} -</td>
         <td class="text-center">- {{ livro.nome }} -</td>
         <td class="text-center">- {{ livro.autor }} -</td>
+        <td class="text-center">- {{ livro.editora }} -</td>
         <td class="text-center">- {{ livro.ano }} -</td>
-        <td class="text-center">- teste -</td>
       </tr>
     </tbody>
   </table>

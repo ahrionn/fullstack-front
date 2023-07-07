@@ -11,8 +11,10 @@ export class AppComponent implements OnInit {
   showTable = false;
   showFormulario = false;
   novoLivro: Livro = {
+    id: 0,
     nome: '',
     autor: '',
+    editora: '',
     ano: 0
   };
   title: string = '';

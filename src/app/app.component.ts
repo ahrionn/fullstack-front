@@ -7,6 +7,7 @@ import { Livro } from './livro.model';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
+
 export class AppComponent implements OnInit {
   showTable = false;
   showFormulario = false;
@@ -51,7 +52,6 @@ export class AppComponent implements OnInit {
           this.formError = false;
         }, 3000);
         console.error('Erro ao adicionar o livro:', error);
-        // Faça o tratamento do erro
       }
     );
   }

@@ -3,6 +3,7 @@
 </head>
 
 <body>
+
   <header>
 
     <h1>
@@ -10,11 +11,11 @@
       <br>
       Please feel comfortable to do whatever the fuck you want.
     </h1>
-
     <button class="header-button" (click)="exibirTabela()" (click)="getLivros()"><i class="fas fa-list"></i></button>
     <button class="header-button" (click)="exibirFormulario()"><i class="fas fa-plus"></i></button>
     <button class="header-button"><i class="fas fa-trash"></i></button>
     <button class="header-button"><i class="fas fa-edit"></i></button>
+
   </header>
   
   <form class="livro-form" *ngIf="showFormulario">
@@ -22,21 +23,19 @@
     <p>Oh, so you have something to contribute?</p>
     <p>That's great.</p>
     <p>Fucking great.</p>
-
     <input class="form-entry" type="number" placeholder="ID" name="id" [(ngModel)]="novoLivro.id" required>
     <input class="form-entry" type="text" placeholder="Name" name="nome" [(ngModel)]="novoLivro.nome" required>
     <input class="form-entry" type="text" placeholder="Author" name="autor" [(ngModel)]="novoLivro.autor" required>
     <input class="form-entry" type="text" placeholder="Publishing Company" name="editora" [(ngModel)]="novoLivro.editora" required>
     <input class="form-entry" type="number" placeholder="Release Year" name="ano" [(ngModel)]="novoLivro.ano" required>
     <button (click)="submitForm()" type="submit">add this shit</button>
-
     <p class="form-message" *ngIf="formSuccess">yaaay it fucking worked</p>
-
     <p class="form-message" *ngIf="formError">there's something wrong with your shit</p>
 
   </form>
 
   <table class="livros-table" *ngIf="showTable && livros && livros.length > 0">
+
     <thead>
       <tr>
         <th class="header-black" colspan="5">Here are some fucking books that I fucking have:</th>
@@ -58,5 +57,7 @@
         <td class="text-center">- {{ livro.ano }} -</td>
       </tr>
     </tbody>
+    
   </table>
+
 </body>

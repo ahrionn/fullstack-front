@@ -14,11 +14,11 @@ export class AppComponent implements OnInit {
   formSuccess = false;
   formError = false;
   novoLivro: Livro = {
-    id: 0,
+    id: NaN,
     nome: '',
     autor: '',
     editora: '',
-    ano: 0
+    ano: NaN
   };
   title: string = '';
   livros: Livro[] = [];
@@ -38,11 +38,11 @@ export class AppComponent implements OnInit {
         this.livros.push(this.novoLivro);
         console.log('Livro adicionado com sucesso!');
         this.novoLivro = {
-          id: 0,
+          id: NaN,
           nome: '',
           autor: '',
           editora: '',
-          ano: 0
+          ano: NaN
         };
       },
       (error) => {
